@@ -1,5 +1,5 @@
 import { useGetDashboardMetricsQuery } from '@/state/api'
-import { BarChart, TrendingDown, TrendingUp } from 'lucide-react';
+import { TrendingDown, TrendingUp } from 'lucide-react';
 import { AreaChart } from 'recharts';
 import numeral from 'numeral';
 import React from 'react';
@@ -11,9 +11,9 @@ const CardPurchaseSummary = () => {
   const purchaseData = data?.purchaseSummary || [];
 
   const lastDataPoint = purchaseData[purchaseData.length - 1] || null;
-
+//   h-fit mb-[100px]
     return (
-    <div className='flex flex-col justify-between row-span-2 xl:span-3 col-span-1 md:col-span-2 xl:col-span-1 bg-white shadow-md rounded-2xl'>
+    <div className='flex flex-col justify-between row-span-2 xl:row-span-3 col-span-1 md:col-span-2 xl:col-span-1 bg-white shadow-md rounded-2xl'>
       { isLoading ? (
         <div className='m-5'>Loading..</div> 
      ) : (
@@ -50,11 +50,11 @@ const CardPurchaseSummary = () => {
             )}
           </div>
         </div>
-                                                                {/* Chart */}
-        <ResponsiveContainer width="100%" height={200} className="px-2">
+                                    {/* Chart */}
+        <ResponsiveContainer width="100%" height={200} className="px-7">
             <AreaChart
                 data={purchaseData}
-                margin={{ top: 0, right: 0, left: -50, bottom: 45 }}
+                margin={{ top: 0, right: 0, left: -70, bottom: 70 }}
             >
                 <XAxis
                     dataKey="date"
