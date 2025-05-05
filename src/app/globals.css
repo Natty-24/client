@@ -19,6 +19,29 @@ body,
   @apply text-gray-900;
 }
 
+.inputStyles{
+ position: relative;   
+ overflow: hidden;
+ margin-bottom: 10px;
+
+ transition: 150ms ease-in-out;
+}
+.inputStyles::before{
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  background-color: rgb(153, 153, 243);
+
+  transition: 150ms ease-in-out;
+  transform: translateY(-100%);
+}
+.inputStyles:focus-within::before{
+  transform: translateY(0);
+}
 @media (min-width: 768px) {
   .custom-grid-rows {
     grid-template-rows: repeat(8, 20vh);
